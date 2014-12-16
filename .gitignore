@@ -1,4 +1,7 @@
+.idea/
+*.iml
 /target
+*.log
 /lib
 /classes
 /checkouts
