@@ -3,7 +3,10 @@
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [com.postspectacular.rotor :as rotor]
-            [taoensso.timbre :as timbre]))
+            [clojure.java.io :as io]
+            [taoensso.timbre :as timbre])
+  (:import
+    (org.apache.commons.io FilenameUtils)))
 
 (defn init []
   (timbre/set-config! [:timestamp-pattern] "yyyy-MM-dd HH:mm:ss")
@@ -24,11 +27,19 @@
   (timbre/info "slurp-apk is shutting down"))
 
 (defn accept-url [url]
+  (println url)
+  (let [filename (FilenameUtils/getName url)]
+    ;(spit filename (slurp url))
+    (io/copy (io/input-stream url) (io/file filename))
+    )
+
+  "OK"
   )
 
 (defroutes app-routes
            (GET "/" [] "Hello World")
-           (POST "/api/welcome-url" [url] (accept-url url))
+           ; http://d1.apk8.com:8020/game_m/zhaotonglei.apk
+           (ANY "/api/accept-url" [url] (accept-url url))
            (route/not-found "Not Found"))
 
 (def app

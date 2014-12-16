@@ -11,6 +11,7 @@
                            [org.xerial/sqlite-jdbc "3.7.2"]
                            [com.taoensso/timbre "3.3.1"]
                            [com.postspectacular/rotor "0.1.0"]
+                           [commons-io/commons-io "2.4"]
                            ]
             :plugins [[lein-ring "0.8.13"]]
             :ring {:handler slurp-apk.core.handler/app
