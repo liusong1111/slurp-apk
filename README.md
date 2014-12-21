@@ -27,9 +27,10 @@
     * 原始工程下的apk.db  #解析apk的结果存放到该数据库
     * apk-parser   #解析apk得到包名的可执行文件,由立新提供
 * 执行：
-
+    `
     cd ~/apk-parser
     nohup java -jar slurp-apk-0.1.0-SNAPSHOT-standalone.jar &
+    `
 
 # 客户端使用方法
     # POST一个url
