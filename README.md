@@ -26,7 +26,7 @@
 * 将如下三个文件复制到生产环境的一个目录下（如~/apk-parser)：
     * slurp-apk-0.1.0-SNAPSHOT-standalone.jar  #server执行文件
     * 原始工程下的apk.db  #解析apk的结果存放到该数据库
-    * apk-parser   #解析apk得到包名的可执行文件,由立新提供
+    * apk-parser.sh   #解析apk得到包名的可执行文件,由立新提供
 
 # 在生产环境运行：
 
