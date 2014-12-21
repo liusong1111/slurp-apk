@@ -12,6 +12,7 @@
                            [com.taoensso/timbre "3.3.1"]
                            [com.postspectacular/rotor "0.1.0"]
                            [commons-io/commons-io "2.4"]
+                           [org.clojars.hozumi/clj-commons-exec "1.1.0"]
                            ]
             :plugins [[lein-ring "0.8.13"]]
             :ring {:handler slurp-apk.core.handler/app

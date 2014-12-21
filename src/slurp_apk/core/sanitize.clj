@@ -44,7 +44,9 @@
 
 (defn- -sanitize [filename]
   (-> filename
-      (s/replace CHARACTER_FILTER ""))
+      ;(s/replace CHARACTER_FILTER ""))
+      ; replace with character $, to indicate that there was a special character
+      (s/replace CHARACTER_FILTER (s/re-quote-replacement "$")))
   )
 
 (defn- truncate [filename]
@@ -62,6 +64,6 @@
       truncate)
   )
 
-(defn -main []
-  ; should print "ab我是c.zip"
-  (println (sanitize "/a/b/  我是c.zip")))
+;(defn -main []
+;  ; should print "ab我是c.zip"
+;  (println (sanitize "/a/b/  我是c.zip")))
