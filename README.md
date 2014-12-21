@@ -20,17 +20,19 @@
     # 本步会在"工程目录/target/"下生成文件"slurp-apk-0.1.0-SNAPSHOT-standalone.jar"
     lein ring uberjar
 
-# 在生产环境运行
+# 准备生产环境
+
 * 确保生产环境安装jdk
 * 将如下三个文件复制到生产环境的一个目录下（如~/apk-parser)：
     * slurp-apk-0.1.0-SNAPSHOT-standalone.jar  #server执行文件
     * 原始工程下的apk.db  #解析apk的结果存放到该数据库
     * apk-parser   #解析apk得到包名的可执行文件,由立新提供
-* 执行：
-    `
+
+# 在生产环境运行：
+
     cd ~/apk-parser
     nohup java -jar slurp-apk-0.1.0-SNAPSHOT-standalone.jar &
-    `
+
 
 # 客户端使用方法
     # POST一个url
